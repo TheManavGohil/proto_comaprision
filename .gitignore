@@ -1,1 +1,15 @@
 /node_modules
+.DS_Store
+.env
+*.log
+*.class
+*.jar
+*.war
+*.ear
+target/
+bin/
+coverage/
+*.tmp
+*.swp
+.idea/
+.vscode/

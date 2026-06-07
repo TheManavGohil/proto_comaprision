@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "node_server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:go": "go run go_server.go",
+    "start:java": "javac JavaServer.java && java JavaServer",
+    "start:node": "node node_server.js",
+    "start:frontend": "python3 -m http.server 8080",
+    "start:all": "./start_all.sh"
   },
   "keywords": [],
   "author": "",

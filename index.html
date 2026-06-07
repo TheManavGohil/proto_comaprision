@@ -639,6 +639,9 @@
             const javaMemory = results.java ? Math.round(results.java.memoryUsage / 1024) : 'N/A';
             const nodeMemory = results.node ? Math.round(results.node.memoryUsage / 1024) : 'N/A';
             
+            const formatTime = (t) => typeof t === 'number' ? t.toFixed(3) + ' ms' : t;
+            const formatMem = (m) => typeof m === 'number' ? m.toLocaleString() + ' KB' : m;
+            
             // Determine winner
             let winner = 'N/A';
             let winnerClass = '';
@@ -672,12 +675,12 @@
                 <td><strong>${testName.charAt(0).toUpperCase() + testName.slice(1)}</strong><br>
                     <small>Input: ${results.input}</small>
                 </td>
-                <td>${goTime}</td>
-                <td>${javaTime}</td>
-                <td>${nodeTime}</td>
-                <td>${goMemory}</td>
-                <td>${javaMemory}</td>
-                <td>${nodeMemory}</td>
+                <td>${formatTime(goTime)}</td>
+                <td>${formatTime(javaTime)}</td>
+                <td>${formatTime(nodeTime)}</td>
+                <td>${formatMem(goMemory)}</td>
+                <td>${formatMem(javaMemory)}</td>
+                <td>${formatMem(nodeMemory)}</td>
                 <td><strong>${winner}</strong></td>
             `;
             
